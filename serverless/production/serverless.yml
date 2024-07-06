@@ -1,0 +1,27 @@
+service: serverless-sample-shopify-functions
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  stage: production
+  region: ap-northeast-1
+
+iam:
+    role:
+      statements:
+        - Effect: "Allow"
+          Action:
+            - s3:*
+          Resource: 
+            - arn:aws:s3:::
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - s3:
+          bucket: tokyobase-input-bucket
+          event: s3:ObjectCreated:*
+          rules:
+            - suffix: .csv
