@@ -10,7 +10,7 @@ provider:
   runtime: nodejs20.x
   stage: dev
   region: us-east-1
-  roleName: flow-to-apigw-functions-${self:provider.stage}-${self:provider.region}-lambdaRole
+  roleName: FlowToAPIGW-${self:provider.stage}-${self:provider.region}-lambdaRole
 
 functions:
   api:
