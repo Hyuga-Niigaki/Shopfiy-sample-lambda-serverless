@@ -1,6 +1,10 @@
 const serverless = require("serverless-http");
 const express = require("express");
+const bodyParser = require('body-parser');
 const app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res, next) => {
   return res.status(200).json({
@@ -12,6 +16,11 @@ app.get("/hello", (req, res, next) => {
   return res.status(200).json({
     message: "Hello from path!",
   });
+});
+
+app.post('/api', (req, res) => {
+  console.log('Received body:', req.body);
+  res.send('Body received and logged');
 });
 
 app.use((req, res, next) => {
