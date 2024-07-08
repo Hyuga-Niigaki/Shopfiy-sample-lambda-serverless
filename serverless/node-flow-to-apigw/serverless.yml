@@ -8,6 +8,9 @@ service: flow-to-apigw-serverless-sample-shopify-functions
 provider:
   name: aws
   runtime: nodejs20.x
+  stage: dev
+  region: us-east-1
+  roleName: flow-to-apigw-functions-${self:provider.stage}-${self:provider.region}-lambdaRole
 
 functions:
   api:

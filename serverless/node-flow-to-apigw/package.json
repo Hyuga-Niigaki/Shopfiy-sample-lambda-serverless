@@ -1,5 +1,5 @@
 {
-  "name": "dev-serverless-sample-shopify-functions",
+  "name": "flow-to-apigw-serverless-sample-shopify-functions",
   "version": "1.0.0",
   "description": "",
   "dependencies": {
