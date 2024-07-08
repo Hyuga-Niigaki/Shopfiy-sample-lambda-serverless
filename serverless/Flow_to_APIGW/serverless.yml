@@ -1,9 +1,9 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: hyugaki
 # "app" enables Serverless Framework Dashboard features and sharing them with other Services.
-app: dev-serverless-sample-shopify-functions
+app: flow-to-apigw-serverless-sample-shopify-functions
 # "service" is the name of this project. This will also be added to your AWS resource names.
-service: dev-serverless-sample-shopify-functions
+service: flow-to-apigw-serverless-sample-shopify-functions
 
 provider:
   name: aws
