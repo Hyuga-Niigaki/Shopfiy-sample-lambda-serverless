@@ -20,7 +20,7 @@ app.get("/hello", (req, res, next) => {
 
 app.post('/api', (req, res) => {
   console.log('Received body:', req.body);
-  res.send('Body received');
+  res.send('Body received and logged');
 });
 
 app.use((req, res, next) => {
