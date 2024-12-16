@@ -1,6 +1,10 @@
+useDotenv: true
+
 org: hyugaki
 app: contents-translation
 service: contents-translation
+plugins:
+  - serverless-dotenv-plugin
 frameworkVersion: '3'
 
 provider:

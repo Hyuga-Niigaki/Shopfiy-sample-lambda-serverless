@@ -1,4 +1,5 @@
 require('dotenv').config();
+console.log(process.env.SHOPIFY_STORE_URL);
 const axios = require('axios');
 
 const shopifyGraphQLEndpoint = `https://${process.env.SHOPIFY_STORE_URL}/admin/api/2024-10/graphql.json`;
@@ -17,7 +18,6 @@ module.exports.handler = async (event) => {
           }
           email
           currencyCode
-          timezone
           plan {
             displayName
           }
