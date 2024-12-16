@@ -1,0 +1,22 @@
+org: hyugaki
+app: contents-translation
+service: contents-translation
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: ap-northeast-1
+  profile: admin_hyuga
+  environment:
+    SHOPIFY_ACCESS_TOKEN: ${env:SHOPIFY_ACCESS_TOKEN}
+    SHOPIFY_STORE_URL: ${env:SHOPIFY_STORE_URL}
+
+functions:
+  api:
+    handler: index.handler
+    events:
+      - httpApi:
+          path: /shop-info
+          method: get
